@@ -1,9 +1,24 @@
 import { Container, CssBaseline, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Album from "./Album";
+import Album from "../components/Album";
+import { createClient } from "contentful";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "topic" });
+
+  return {
+    props: {
+      topics: res.items,
+    },
+  };
+}
+const Home: NextPage = ({ topics }) => {
   return (
     <>
       <Head>
@@ -15,7 +30,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <CssBaseline />
-      <Album />
+      <Album topics={topics} />
     </>
   );
 };

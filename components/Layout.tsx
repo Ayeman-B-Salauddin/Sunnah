@@ -5,7 +5,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import Link from "next/link";
 
 type Props = {
   children: JSX.Element;
@@ -14,6 +13,9 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: "#000000",
+    },
+    secondary: {
+      main: "#5c83ad",
     },
   },
 });
