@@ -1,0 +1,35 @@
+import {
+  AppBar,
+  createTheme,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import Link from "next/link";
+
+type Props = {
+  children: JSX.Element;
+};
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#000000",
+    },
+  },
+});
+
+export default function Layout({ children }: Props) {
+  return (
+    <ThemeProvider theme={theme}>
+      <AppBar position="relative">
+        <Toolbar sx={{ flexGrow: 1, justifyContent: "center" }}>
+          <Typography variant="h4" color="inherit" noWrap>
+            ٱلْحَمْدُ لِلّٰهِ
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <div className="page-content">{children}</div>
+    </ThemeProvider>
+  );
+}
