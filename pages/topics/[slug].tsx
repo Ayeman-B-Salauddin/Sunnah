@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Container, CssBaseline, Typography } from "@mui/material";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
