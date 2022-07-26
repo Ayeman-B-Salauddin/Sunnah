@@ -3,6 +3,7 @@
 import { Container, CssBaseline, Typography } from "@mui/material";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Head from "next/head";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -51,8 +52,19 @@ const LearnMore = ({ topic }) => {
   const { title, ilm } = topic.fields;
   return (
     <>
+      <Head>
+        <title>SUNNAH</title>
+        <meta name="description" content="Library of Authentic Hadiths" />
+        <link
+          rel="icon"
+          href="https://img.icons8.com/fluency/48/000000/pen-1.png"
+        />
+      </Head>
       <CssBaseline />
       <Container sx={{ mt: 3 }}>
+        <Typography gutterBottom variant="h4" component="h2">
+          {title}
+        </Typography>
         <div>{documentToReactComponents(ilm)}</div>
       </Container>
     </>
