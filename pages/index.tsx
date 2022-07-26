@@ -15,6 +15,7 @@ export async function getStaticProps() {
   return {
     props: {
       topics: res.items,
+      revalidate: 1,
     },
   };
 }
