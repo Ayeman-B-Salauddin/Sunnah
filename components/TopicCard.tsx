@@ -23,7 +23,7 @@ export const TopicCard = ({ topic }) => {
         }}
       >
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant="h4" component="h2">
+          <Typography gutterBottom variant="h9" component="h2">
             {title}
           </Typography>
           <Typography>{description}</Typography>

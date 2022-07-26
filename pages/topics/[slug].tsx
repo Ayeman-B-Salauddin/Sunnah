@@ -61,7 +61,7 @@ const LearnMore = ({ topic }) => {
         />
       </Head>
       <CssBaseline />
-      <Container sx={{ mt: 3 }}>
+      <Container sx={{ mt: 3, mb: 5 }}>
         <Typography gutterBottom variant="h4" component="h2">
           {title}
         </Typography>
